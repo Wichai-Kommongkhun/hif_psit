@@ -11,6 +11,9 @@ def home():
 @app.route("/bmi")
 def bmi():
     return render_template("bmi.html")
+@app.route("/bmi")
+def bmi():
+    return render_template("bmi.html")
 
 if __name__=="__main__":
     app.run(debug=True)
