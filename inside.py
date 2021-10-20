@@ -12,13 +12,17 @@ def home():
 def bmi():
     return render_template("bmi.html")
 
-@app.route("/login")
+@app.route("/user_account_register")
+def register():
+    return render_template("register.html")
+
+@app.route("/user_account_login")
 def login():
     return render_template("login.html")
 
-@app.route("/register")
-def register():
-    return render_template("register.html")
+
+
+
 
 if __name__=="__main__":
     app.run(debug=True)
