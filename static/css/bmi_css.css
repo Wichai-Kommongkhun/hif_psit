@@ -60,7 +60,7 @@
     color: rgb(255, 255, 255);
     display: block;
     font-size: 25px;
-    background: url(/static/streamline-icon-interface-setting-menu-1@48x48\ \(1\).svg)
+    background: url(../img&icon/streamline-icon-interface-setting-menu-1@48x48\ \(1\).svg)
     no-repeat left center;
     cursor: pointer;
     padding: 22px 0 10px 50px;
@@ -80,7 +80,7 @@ input#menu {
 }
 
 input:checked + label {
-    background-image: url(/static/Xstreamline-icon-interface-arrows-button-to-bottom@48x48.svg);
+    background-image: url(../img&icon/Xstreamline-icon-interface-arrows-button-to-bottom@48x48.svg);
     background-size: 30px;
 }
 
@@ -92,7 +92,7 @@ input:checked + label {
 }
 
 input:checked ~ label {
-    background-image: url(/static/Xstreamline-icon-interface-arrows-button-to-bottom@48x48.svg);
+    background-image: url(../img&icon/Xstreamline-icon-interface-arrows-button-to-bottom@48x48.svg);
 
 }
 
@@ -125,3 +125,6 @@ input:checked ~ .menu-x {
 .a-inx a {
     color: white;
 }
+
+
+/* คนที่มาทำต่อเขียน class ข้างล่างนี้เลยนะ ข้างบนถ้าจะแก้อย่าลืมเก็บโค้ดเก่าไว้ก่อนนะ (ฺBIG FB : Wichai kommongkhun)*/

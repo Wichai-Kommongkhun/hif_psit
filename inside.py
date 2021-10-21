@@ -1,6 +1,10 @@
 from flask import Flask , template_rendered
 from flask.templating import render_template
 
+"""
+    ตรงนี้เป็นส่วนหลังบ้าน คนรับผิดชอบ มี BIG กับ โต้
+    ทำการเชื่อมต่อ url เเต่ละเพจ เเละ ติดต่อ ฐานข้อมูล [ใช้ Myqsl]
+"""
 
 app = Flask(__name__)
 
