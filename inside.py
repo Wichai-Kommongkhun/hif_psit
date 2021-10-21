@@ -4,7 +4,7 @@ from flask.templating import render_template
 
 app = Flask(__name__)
 
-@app.route("/home")
+@app.route("/")
 def home():
     return render_template('home.html')
 
@@ -19,8 +19,6 @@ def register():
 @app.route("/user_account_login")
 def login():
     return render_template("login.html")
-
-
 
 
 
