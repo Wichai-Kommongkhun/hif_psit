@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/register_login2.css">
-    <title>Register</title>
+    <title>Login</title>
 </head>
 <body>
     <div class="box0"> 
@@ -14,13 +14,17 @@
                 <div class="botton01"> LOGIN/เข้าสู่ระบบ</div>
             </div>
                 <form class="input-g">
-                    <input type="text" class="input-field" placeholder="username" required>
-                    <input type="password" class="input-field" placeholder="Password" required>
+
+                    <input type="text" class="input-field" placeholder="username" required
+                        maxlength="18" minlength="6">
+                    <input type="password" class="input-field" placeholder="Password" required
+                        maxlength="18" minlength="6">
+                    
                     <input type="checkbox" class="check-b"><span>Remember Password</span>
                     <button type="submit" class="submit-btn">Login</button>
                     
                 </form>
-                <p class="p01">ฉันยังไม่ได้เป็นสมาชิก <a href="register.html"></a></p> 
+                <p class="p01">ฉันยังไม่ได้เป็นสมาชิก <a href="http://127.0.0.1:5000//user_account_register">Sing up</a></p> 
         </div>
         
     </div>

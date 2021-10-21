@@ -15,7 +15,7 @@
 
 .for-box {
     width: 480px;
-    height: 680px;
+    height: 540px;
     position: relative;
     margin: 5% 0 0 36%;
     background: #fff;
@@ -89,5 +89,6 @@ span{
 }
 
 .p01 {
-    margin: 450px 0 0 0;
+    font-size: 20px;
+    margin: 450px 0 0 40px;
 }

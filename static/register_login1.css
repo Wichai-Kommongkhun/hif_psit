@@ -14,16 +14,16 @@
 }
 
 .for-box {
-    width: 480px;
-    height: 680px;
+    width: 580px;
+    height: 720px;
     position: relative;
-    margin: 5% 0 0 36%;
+    margin: 5% 0 0 34%;
     background: #fff;
     padding: 5px;
 }
 
 .botto {
-    width: 400px;
+    width: 440px;
     margin: 35px auto;
     position:  relative;
     box-shadow: 0 0 22px 10px #ff61241f;
@@ -34,26 +34,27 @@
     background: linear-gradient(to right, #5bff29,#6fc013);
     border-radius: 30px;
     transition: .5s; 
-    font-size: 30px;
-    padding: 10px 80px ;
+    font-size: 26px;
+    padding: 10px 80px;
+    margin: 0 0 0 15px;
     position: absolute;
 }
 
 
 .input-g {
-    top: 150px;
-    margin: -5px 0 0 120px;
+    top: 120px;
+    margin: 5px 0 0 130px;
     position: absolute;
-    width: 250px;
+    width: 320px;
     transition: .5s;
 
 }
 
 .input-field {
-    font-size: 25px;
+    font-size: 18px;
     width: 100%;
-    padding: 20px 0 10px 0;
-    margin: 10px 0 10px 0 ;
+    padding: 10px 0 10px 0;
+    margin: 5px 0 10px 0 ;
     border-left: 0;
     border-top: 0;
     border-right: 0;
@@ -63,12 +64,12 @@
 }
 
 .submit-btn {
-    
-    width: 60%;
-    height: 50px;
+    font-size: 18px;
+    width: 38%;
+    height: 60px;
     cursor: pointer;
     display: block;
-    margin: 35px 0 0 35px;
+    margin: 15px 0 0 65px;
     background: linear-gradient(to right, #5bff29,#6fc013);
     border: 1px solid #6fc013;
     outline: none;
@@ -89,5 +90,14 @@ span{
 }
 
 .p01 {
-    margin: 450px 0 0 0;
+    font-size: 18px;
+    margin: 600px 0 0 55px;
+}
+
+.regis-box label{
+    text-align: left;
+    display: block;
+    font-size: 22px;
+    margin: 3% 0 0 0;
+    
 }

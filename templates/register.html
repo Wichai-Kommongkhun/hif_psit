@@ -14,13 +14,28 @@
                 <div class="botton01"> Register/สมัครสมาชิก</div>
             </div>
                 <form class="input-g">
-                    <input type="text" class="input-field" placeholder="username" required>
-                    <input type="password" class="input-field" placeholder="Password" required>
-                    <input type="checkbox" class="check-b"><span>Remember Password</span>
-                    <button type="submit" class="submit-btn">Login</button>
-                    
+                    <div class="regis-box">
+                        <label for="username">Username/ชื่อผู้ใช้</label>
+                        <input type="text" class="input-field" placeholder="ตัวอักษร หรือ ตัวเลข 6-18ตัว" required
+                        maxlength="18" minlength="6">
+                    </div>
+                    <div class="regis-box">
+                        <label for="pasword">Password/รหัสผ่าน</label>
+                        <input type="password" class="input-field" placeholder="ตัวอักษรเเละตัวเลข 6-18ตัว" required
+                        maxlength="18" minlength="6">
+                    </div>
+                    <div class="regis-box">
+                        <label for="pasword">Password agian/รหัสผ่านอีกครั้ง</label>
+                        <input type="password" class="input-field" placeholder="ตัวอักษรเเละตัวเลข 6-18ตัว" required
+                        maxlength="18" minlength="6">
+                    </div>
+                    <div class="regis-box">
+                        <label for="text">E-mail</label>
+                        <input type="text" class="input-field" placeholder="example@hif.com" required>
+                    </div>
+                    <button type="submit" class="submit-btn">สมัครสมาชิก</button>
                 </form>
-                <p class="p01">ฉันยังไม่ได้เป็นสมาชิก <a href="login.html"></a></p> 
+                <p class="p01">ฉันเป็นสมาชิกเเล้ว <a href="http://127.0.0.1:5000/user_account_login">Sing in/เข้าสู่ระบบ</a></p> 
         </div>
         
     </div>
