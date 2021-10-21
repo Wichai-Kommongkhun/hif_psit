@@ -12,9 +12,9 @@ def home():
 def bmi():
     return render_template("bmi.html")
 
-@app.route("/food")#                   food page *
-def food():
-    return render_template("food.html")
+@app.route("/hif_main")#                   hif_main page *
+def main():
+    return render_template("hif_main.html")
 
 @app.route("/about")#                   about page *
 def about():
