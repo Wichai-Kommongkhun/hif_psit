@@ -6,6 +6,9 @@ Emoji = https://th.piliapp.com/emoji/list/
 
 font = https://fonts.google.com/
 
+backend = https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/ https://codeshack.io/login-system-python-flask-mysql/
+
+
 
 ทุกครั้งที่โหลดไฟล์เข้ามาเก็บ ช่วยเเยกประเภทด้วยนะ
 เช่น ถ้าเป็นรูปภาพ หรือ ที่อยู่รูปภาพ(ไฟล์เว็บ) ต้องเอาไปเก็บใน static/img&icon

@@ -1,5 +1,7 @@
-from flask import Flask , template_rendered
-from flask.templating import render_template
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mysqldb import MySQL
+import MySQLdb.cursors
+import re
 
 """
     ตรงนี้เป็นส่วนหลังบ้าน คนรับผิดชอบ มี BIG กับ โต้
@@ -7,7 +9,15 @@ from flask.templating import render_template
 """
 
 app = Flask(__name__)
+app.secret_key = 'hif_psit'
 
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'user_account'
+
+
+mysql = MySQL(app)
 @app.route("/") #                   home page *
 def home():
     return render_template('home.html')
@@ -28,15 +38,58 @@ def about():
 def help():
     return render_template("help.html")
 
-@app.route("/user_account_register")#             register page *
+@app.route("/user_account/user_account_register", methods=['GET', 'POST'])#             register page *
 def register():
+    if request.method == 'POST' and 'user' \
+    in request.form and 'password' in request.form and 'email' in request.form:
+        user = request.form['user']
+        email = request.form['email']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM user WHERE user = % s', (user, ))
+        account = cursor.fetchone()
+        if account:
+            msg = 'Account already exists !'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            msg = 'Invalid email address !'
+        elif not re.match(r'[A-Za-z0-9]+', user):
+            msg = 'Username must contain only characters and numbers !'
+        elif not user or not password or not email:
+            msg = 'Please fill out the form !'
+        else:
+            cursor.execute('INSERT INTO user VALUES (NULL, % s, % s, % s)', (user, password, email, ))
+            mysql.connection.commit()
+            msg = 'You have successfully registered !'
+    elif request.method == 'POST':
+        msg = 'Please fill out the form !'
     return render_template("register.html")
 
-@app.route("/user_account_login")#               login page *
+@app.route('/home')
+@app.route("/user_account/user_account_login", methods=['GET','POST'])#               login page *
 def login():
-    return render_template("login.html")
+    worng = ''
+    if request.method == 'POST' and 'user' in request.form and 'password' in request.form:
+        user = request.form['user']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM user WHERE user = %s AND password = %s', (user, password,))
+        account = cursor.fetchone()
+        if account:
+            session['loggedin'] = True
+            session['id'] = account['id']
+            session['user'] = account['user']
+        else:
+            worng = 'incorrect user/password'
+    return render_template("login.html",worng=worng)
 
-
+@app.route('/user_account/user_logout')
+def logout():
+    # Remove session data, this will log the user out
+   session.pop('loggedin', None)
+   session.pop('id', None)
+   session.pop('user', None)
+   # Redirect to login page
+   return redirect(url_for('login'))
 
 if __name__=="__main__":
     app.run(debug=True)

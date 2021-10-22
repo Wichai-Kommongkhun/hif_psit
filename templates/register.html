@@ -21,16 +21,16 @@
             <div class="botto">   
                 <div class="botton01"> Register/สมัครสมาชิก</div>
             </div>
-                <form class="input-g">
+                <form class="input-g" action="{{ url_for('register') }}" method="post" autocomplete="off">
                     <div class="regis-box">
                         <label for="username">Username/ชื่อผู้ใช้</label>
                         <input type="text" class="input-field" placeholder="ตัวอักษร หรือ ตัวเลข 6-18ตัว" required
-                        maxlength="18" minlength="6">
+                        maxlength="18" minlength="6" name="user" id="user">
                     </div>
                     <div class="regis-box">
                         <label for="pasword">Password/รหัสผ่าน</label>
                         <input type="password" class="input-field" placeholder="ตัวอักษรเเละตัวเลข 6-18ตัว" required
-                        maxlength="18" minlength="6">
+                        maxlength="18" minlength="6" name="password" id="password"> 
                     </div>
                     <div class="regis-box">
                         <label for="pasword">Password agian/รหัสผ่านอีกครั้ง</label>
@@ -39,11 +39,12 @@
                     </div>
                     <div class="regis-box">
                         <label for="text">E-mail</label>
-                        <input type="text" class="input-field" placeholder="example@hif.com" required>
+                        <input type="text" class="input-field" placeholder="example@hif.com" required name="email"
+                        id="email">
                     </div>
-                    <button type="submit" class="submit-btn">สมัครสมาชิก</button>
+                    <button type="submit" class="submit-btn" value="register">สมัครสมาชิก</button>
                 </form>
-                <p class="p01">ฉันเป็นสมาชิกเเล้ว <a href="http://127.0.0.1:5000/user_account_login">Sing in/เข้าสู่ระบบ</a></p> 
+                <p class="p01">ฉันเป็นสมาชิกเเล้ว <a href="http://127.0.0.1:5000/user_account/user_account_login">Sing in/เข้าสู่ระบบ</a></p> 
         </div>
         
     </div>

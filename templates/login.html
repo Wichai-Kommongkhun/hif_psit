@@ -18,23 +18,25 @@
     บอกเพื่อนทุกครั้งนะ ว่าทำอะ แก้ตรงไหน (เขียนชื่อ เเละช่องทางติดต่อส่วนตัวให้ด้วย)   -->
 
 <body>
+    
     <div class="box0"> 
         <div class="for-box">
             <div class="botto">   
                 <div class="botton01"> LOGIN/เข้าสู่ระบบ</div>
             </div>
-                <form class="input-g">
+                <form class="input-g" action="{{ url_for('login') }}" method="post">
 
                     <input type="text" class="input-field" placeholder="username" required
-                        maxlength="18" minlength="6">
+                        maxlength="18" minlength="6" id="user">
                     <input type="password" class="input-field" placeholder="Password" required
-                    maxlength="18" minlength="6">
+                    maxlength="18" minlength="6" id="password">
                     
                     <input type="checkbox" class="check-b"><span>Remember Password</span>
-                    <button type="submit" class="submit-btn">Login</button>
+                    <button type="submit" class="submit-btn" value="login">Login</button>
                     
                 </form>
-                <p class="p01">ฉันยังไม่ได้เป็นสมาชิก <a href="http://127.0.0.1:5000//user_account_register">Sing up</a></p> 
+                <p class="p01">ฉันยังไม่ได้เป็นสมาชิก <a href="http://127.0.0.1:5000/user_account/user_account_register">Sing up</a></p>
+                <p class="p01">{{worng}} </p>
         </div>
         
     </div>
