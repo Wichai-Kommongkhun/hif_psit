@@ -37,7 +37,7 @@
     width: 200px;
     background-color: rgb(37, 36, 37);
     padding: 0px 30px;
-    position: fixed;
+    position: absolute;
 }
 
 .col-menu ul{
