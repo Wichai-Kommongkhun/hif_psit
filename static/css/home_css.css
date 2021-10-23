@@ -37,7 +37,7 @@
     width: 200px;
     background-color: rgb(37, 36, 37);
     padding: 0px 30px;
-    position: fixed;
+    position: absolute;
 }
 
 .col-menu ul{
@@ -110,7 +110,7 @@ input:checked ~ .menu-x {
     width: 90px;
     height: 100%;
     color: white;
-    margin: 0 0 0 1760px; /* ปรับให้ชิดขวาหน่อย */
+    margin: 0 0 0 1400px; /* ปรับให้ชิดขวาหน่อย */
     display: block;
     border: solid 2px white;
     text-align: center;
@@ -130,7 +130,7 @@ input:checked ~ .menu-x {
 .main-content{
     color: black;
     position: absolute;
-    margin: 180px 0 0 690px;
+    margin: 180px 0 0 410px;  /* ปรับ margin นิดหน่อยนะ BIG*/
     padding: 20px;
 }
 

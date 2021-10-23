@@ -61,7 +61,7 @@ def register():
         elif not user or not password or not email:
             msg = 'Please fill out the form !'
         else:
-            cursor.execute('INSERT INTO user VALUES (NULL, % s, % s, % s)', (user, password, email, ))
+            cursor.execute('INSERT INTO user VALUES (NULL, % s, % s, % s)', (user, email, password, ))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
@@ -81,11 +81,11 @@ def login():
         if account:
             session['loggedin'] = True
             session['id'] = account['id']
-            session['user'] = account['username']
+            session['user'] = account['user']
             session['password'] = account['password']
-            return redirect(url_for('home'))
+            return render_template('home.html',)
         else:
-            flash("Incorrect username/password!", "danger")
+           return "Incorrect username/password!"
     return render_template('login.html')
         
 
