@@ -180,3 +180,7 @@ button{
     z-index: -1;
     transition: all 0.25s ease;
 }
+
+.Continue-btn{
+    color: white;
+}
