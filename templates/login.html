@@ -27,9 +27,9 @@
                 <form class="input-g" action="{{ url_for('login') }}" method="post">
 
                     <input type="text" class="input-field" placeholder="username" required
-                        maxlength="18" minlength="6" id="user">
+                        maxlength="18" minlength="6" id="username" name="username">
                     <input type="password" class="input-field" placeholder="Password" required
-                    maxlength="18" minlength="6" id="password">
+                    maxlength="18" minlength="6" id="password" name="password">
                     
                     <input type="checkbox" class="check-b"><span>Remember Password</span>
                     <button type="submit" class="submit-btn" value="login">Login</button>

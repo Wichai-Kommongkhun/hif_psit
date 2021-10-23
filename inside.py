@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from flask.helpers import flash
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
+import bcrypt
 
 
 """
@@ -50,8 +52,8 @@ def register():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM user WHERE user = % s', (user, ))
         account = cursor.fetchone()
-        if account:
-            msg = 'Account already exists !'
+        if account: #ยังไม่ส่ง msg ไปหน้า reigiter
+            msg = ''
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             msg = 'Invalid email address !'
         elif not re.match(r'[A-Za-z0-9]+', user):
@@ -64,30 +66,33 @@ def register():
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
-    return render_template("register.html")
+    return render_template('register.html')
 
-@app.route('/home')
+
 @app.route("/user_account/user_account_login", methods=['GET','POST'])#               login page *
 def login():
-    worng = ''
-    if request.method == 'POST' and 'user' in request.form and 'password' in request.form:
-        user = request.form['user']
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        
+        username = request.form['username']
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM user WHERE user = %s AND password = %s', (user, password,))
+        cursor.execute('SELECT * FROM user WHERE user = %s AND password = %s', (username, password))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
             session['id'] = account['id']
-            session['user'] = account['user']
+            session['user'] = account['username']
+            session['password'] = account['password']
+            return redirect(url_for('home'))
         else:
-            worng = 'incorrect user/password'
-    return render_template("login.html",worng=worng)
+            flash("Incorrect username/password!", "danger")
+    return render_template('login.html')
+        
 
 @app.route('/user_account/user_logout')
 def logout():
     # Remove session data, this will log the user out
-   session.pop('loggedin', None)
+   session.pop('user', None)
    session.pop('id', None)
    session.pop('user', None)
    # Redirect to login page
