@@ -110,9 +110,9 @@ input:checked ~ .menu-x {
     width: 90px;
     height: 100%;
     color: white;
-    margin: 0 0 0 1640px; /* ปรับให้ชิดขวาหน่อย */
+    margin: 0 0 0 1760px; /* ปรับให้ชิดขวาหน่อย */
     display: block;
-    border: solid 1px white;
+    border: solid 2px white;
     text-align: center;
     border: none;
 }
