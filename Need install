@@ -1,0 +1,9 @@
+pip inatall flask
+
+pip install flask_mysqldb
+
+pip install mysql
+
+pip install flask-login
+
+pip install pymysql
