@@ -3,6 +3,7 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 
+
 """
     ตรงนี้เป็นส่วนหลังบ้าน คนรับผิดชอบ มี BIG กับ โต้
     ทำการเชื่อมต่อ url เเต่ละเพจ เเละ ติดต่อ ฐานข้อมูล [ใช้ Myqsl]
@@ -15,6 +16,7 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'user_account'
+
 
 
 mysql = MySQL(app)
