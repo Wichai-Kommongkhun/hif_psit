@@ -136,7 +136,7 @@ input:checked ~ .menu-x {
 
 .main-text{
     font-size: 100px;
-    margin-left: 100px;
+    margin: 0 0 0 50px;
     padding-bottom: 50px;
 }
 
@@ -179,4 +179,12 @@ button{
      #696969 50%, #8b8a8a 100%);
     z-index: -1;
     transition: all 0.25s ease;
+}
+
+body{
+    background-color: #ffffff;
+background-image: url('https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg');
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
 }
