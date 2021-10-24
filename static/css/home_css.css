@@ -12,6 +12,13 @@
 *li {
     list-style: none;
 }
+.backgroud{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),url(bg02.jpeg);
+    background-size: cover;
+    background-position: center; 
+}
 
 .box {
     width: 100%;
@@ -34,16 +41,22 @@
 }
 
 .col-menu {
-    width: 200px;
-    background-color: rgb(37, 36, 37);
-    padding: 0px 30px;
+    background-color: rgba(37, 36, 37, 0.1);
     position: fixed;
 }
 
 .col-menu ul{
     padding: 0;
+    height: calc(100vh - 70px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+*{
+    box-sizing: border-box;
 }
-
 .col-menu a{
     display: block;
     color: white;
@@ -69,10 +82,17 @@
 
 .col-menu li {
     transition: 0.5s;
-    background-color: rgb(37, 36, 37);
+    background-color: rgba(37, 36, 37, 0.5);
     list-style: none;
-    width: 100px;
-    height: 40px;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.col-menu li:hover{
+    background-color: rgba(255,255,255,0.25);
 }
 
 input#menu {
@@ -107,14 +127,16 @@ input:checked ~ .menu-x {
 }
 
 .a-in{
-    width: 90px;
+    width: 100%;
     height: 100%;
     color: white;
-    margin: 0 0 0 1760px; /* ปรับให้ชิดขวาหน่อย */
     display: block;
     border: solid 2px white;
     text-align: center;
     border: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
 }
 
 .a-inx {
@@ -126,20 +148,20 @@ input:checked ~ .menu-x {
 .a-inx a {
     color: white;
 }
-/* คนที่มาทำต่อเขียน class ข้างล่างนี้เลยนะ ข้างบนถ้าจะแก้อย่าลืมเก็บโค้ดเก่าไว้ก่อนนะ (ฺBIG FB : Wichai kommongkhun)*/
 .main-content{
+    min-height: 100vh;
     color: black;
-    position: absolute;
-    margin: 180px 0 0 690px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
 .main-text{
     font-size: 100px;
-    margin-left: 100px;
-    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 button{
     padding: 20px 100px;
     font-size: 1.5rem;
@@ -151,7 +173,6 @@ button{
     transition: all 0.25s ease;
     display: block;
 }
-
 .new-btn{
     color: #fff;
     overflow: hidden;
