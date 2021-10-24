@@ -150,7 +150,7 @@ input:checked ~ .menu-x {
 }
 .main-content{
     min-height: 100vh;
-    color: white;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,15 +158,11 @@ input:checked ~ .menu-x {
 }
 .main-text{
     font-size: 100px;
-<<<<<<< HEAD
-    margin: 0 0 0 50px;
-    padding-bottom: 50px;
-=======
     display: flex;
     justify-content: center;
     align-items: center;
->>>>>>> 1aa68c71e9fee4ebbf74182010a1fd2c0a7e62ab
 }
+
 button{
     padding: 20px 100px;
     font-size: 1.5rem;
@@ -209,8 +205,8 @@ button{
 
 body{
     background-color: #ffffff;
-background-image: url('https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg');
-background-size: cover;
-background-attachment: fixed;
-background-repeat: no-repeat;
+    background-image: url('https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
