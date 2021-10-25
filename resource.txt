@@ -6,6 +6,8 @@ Emoji = https://th.piliapp.com/emoji/list/
 
 font = https://fonts.google.com/
 
+css from = http://www.w3bai.com/th/css/css_form.html
+
 backend = https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/ https://codeshack.io/login-system-python-flask-mysql/
 
 https://headlessui.dev/
