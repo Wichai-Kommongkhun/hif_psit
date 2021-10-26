@@ -60,10 +60,8 @@
 }
 .col-menu a{
     display: block;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px;
-    position: absolute;
-    padding: 80px 25px 80px 25px;
 }
 .col-menu a:hover {
     color: rgb(144, 144, 144); /* ปรับสีเวลาตัว cursor ชี้ไปที่ปุ่ม */
