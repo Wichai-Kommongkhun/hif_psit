@@ -13,6 +13,14 @@
     list-style: none;
 }
 
+.backgroud{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),url(bg02.jpeg);
+    background-size: cover;
+    background-position: center; 
+}
+
 .box {
     width: 100%;
     height: 70px;
@@ -107,13 +115,16 @@ input:checked ~ .menu-x {
 }
 
 .a-in{
-    width: 90px;
+    width: 100%;
     height: 100%;
     color: white;
-    margin: 0px 0 0 1760px;
     display: block;
-    border: solid 0px white;
+    border: solid 2px white;
     text-align: center;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
 }
 
 .a-inx {
@@ -132,7 +143,7 @@ input:checked ~ .menu-x {
 .form-bg {
     width: 100%;
     height: 937px;
-    background-color: rgb(214, 214, 214);
+    
 }
 
 .box-body {
@@ -197,6 +208,21 @@ input:checked ~ .menu-x {
     width: 400px;
     height: 670px;
     margin: 170px 0 0 22%;
-    background-color: rgb(195, 62, 0);
+    background-color: aqua;
     position: absolute;
+}
+
+.nav-note {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+}
+
+
+body{
+    background-color: #666666;
+    background-image: url('https://ae01.alicdn.com/kf/HTB1FoGFMgHqK1RjSZFEq6AGMXXaO/Backdrop-Baby-Hintergrund-Fantasy-Gray-Photoshoot-Background-T20190314.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

@@ -107,13 +107,16 @@ input:checked ~ .menu-x {
 }
 
 .a-in{
-    width: 90px;
+    width: 100%;
     height: 100%;
     color: white;
-    margin: 0px 0 0 1760px;
     display: block;
-    border: solid 1px white;
+    border: solid 2px white;
     text-align: center;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
 }
 
 .a-inx {
