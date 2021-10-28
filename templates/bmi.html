@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/bmi_css.css">
-    <script type="text/javascript" src="/static/home_js.js" ></script>
+    <script src="/static/time.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Hif_BMI</title>
 </head>
@@ -21,7 +21,7 @@
                     <label for="menu">MENU</label>
                     <div class="menu-x">
                         <ul>
-                            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+                                <li><a href="http://127.0.0.1:5000/">Home</a></li>
                                 <li><a href="http://127.0.0.1:5000/bmi">MyBMI</a></li>
                                 <li><a href="http://127.0.0.1:5000/hif_main">Your Body</a></li>
                                 <li><a href="http://127.0.0.1:5000/about">About</a></li>
@@ -44,10 +44,12 @@
                  บอกเพื่อนทุกครั้งนะ ว่าทำอะ แก้ตรงไหน (เขียนชื่อ เเละช่องทางติดต่อส่วนตัวให้ด้วย)   -->
         
         <div class="form-bg">
-            <form class="input-form">
-                <input type="text" name="weigth" class="input1" placeholder="น้ำหนัก (กิโลกรัม)">
+            <form class="input-form" action="/bmi" method="POST" >
+
+                <input type="text" name="weight" class="input1" placeholder="น้ำหนัก (กิโลกรัม)">
                 <input type="text" name="height" class="input2" placeholder="ส่วนสูง (เซนติเมตร)">
-                <button type="submit" name="go" class="btn-go">GO....</button>
+                <button type="submit" name="go" class="btn-go" value="submit">GO....</button>
+
             </form>
             
             <div class="box-body">
@@ -59,11 +61,23 @@
                     <p class="p-box">Height ส่วนสูง</p>
                 </div>
             </div>
-            <div class="note-box">
-                <div class="nav-note">
-                    <p class="nav-p">MY BMI</p>
+            
+            <div class="mybmi">
+                <div class="box-bmi">
+                    <p class="bmi-p1">BMI</p>
+                    {% if bmi%}
+                    <p class="bmi-p2">{{bmi}}</p>
+                    {%endif%}
+                    {%if msg%}
+                    <div class="inbox-bmi">
+                        <p class="bmi-p3">{{msg}}</p>
+                        {%endif%}
+                    </div>
+
                 </div>
             </div>
+            
+            
         </div>
     </div>
             

@@ -4,6 +4,8 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 import bcrypt
+from datetime import datetime
+
 
 
 """
@@ -22,23 +24,55 @@ app.config['MYSQL_DB'] = 'user_account'
 
 
 mysql = MySQL(app)
-@app.route("/") #                   home page *
+@app.route("/") 
 def home():
     return render_template('home.html')
 
-@app.route("/bmi")#                   BMI page *
+@app.route("/bmi", methods=['POST','GET'])  
 def bmi():
-    return render_template("bmi.html")
+    day = ''
+    bmi = ''
+    msg = 'ไหนดูสิอ้วนรึป่าว?'
+    if request.method=='POST' and 'weight' in request.form and 'height' in request.form:
+        we = float(request.form['weight'])
+        he = float(request.form['height'])
+        bmi = we/((he/100)**2)
+        bmi = '%.2f' %bmi
 
-@app.route("/hif_main")#                   hif_main page *
+
+        if float(bmi) < 18.50 :
+            msg = "☠ผอมเกินไปนะ"
+        elif float(bmi) >= 18.50 and float(bmi) < 23.0:
+            msg = " 💪สุขภาพดี!"
+        elif float(bmi) >= 23 and float(bmi) < 25.0:
+            msg = "🧸อวบ! ใกล้อ้วน"
+        elif float(bmi) >= 25 and float(bmi) < 30.0:
+            msg = "🐻อ้วนเเล้วนะ!"
+        elif float(bmi) > 30.0:
+            msg = "🐷อ้วนมากเลย ไปลดสะ!"
+
+
+
+        today = datetime.today()
+        today = today.strftime("%d/%m/%Y %H:%M")
+        day = '%s' %today
+
+    return render_template("bmi.html", bmi=bmi, day=day, msg = msg)
+
+
+
+
+
+
+@app.route("/hif_main")
 def main():
     return render_template("hif_main.html")
 
-@app.route("/about")#                   about page *
+@app.route("/about")
 def about():
     return render_template("about.html")
 
-@app.route("/help")#                  help page *
+@app.route("/help")
 def help():
     return render_template("help.html")
 

@@ -123,7 +123,7 @@ input:checked ~ .menu-x {
 .p-in {
    font-size: 22px;
    color: rgb(250, 250, 250);
-   margin: 20px 0 100px 240px;
+   margin: 1.4% 0 0 15%;
    position: absolute;
 }
 
@@ -141,7 +141,7 @@ input:checked ~ .menu-x {
 }
 
 .a-inx {
-   font-size: 22px;
+   font-size: 20px;
    margin: 25px 0 0 0;
    text-decoration: none;
 }
@@ -155,28 +155,28 @@ input:checked ~ .menu-x {
 
 .form-bg {
     width: 100%;
-    height: 937px;
+    height: 100%;
 }
 
 .box-body {
     width: 200px;
     height: 370px;
 
-    margin: 380px 0 0 50%;
+    margin: 18.5% 0 0 62%;
     position: absolute;
     
 }
 
 .box-weigth {
-    width: 175px;
-    height: 120px;
+    width: 150px;
+    height: 100px;
     border-right: 3px solid black;
     border-left: 3px solid black;
     margin-bottom: 60px;
 }
 
 .p-box {
-    font-size: 48px;
+    font-size: 40px;
     color: black;
     text-align: center;
 }
@@ -186,7 +186,7 @@ input:checked ~ .menu-x {
     width: 300px;
     height: 320px;
     position: absolute;
-    margin:410px 0 0 64%;
+    margin:19% 0 0 72%;
     
 }
 
@@ -202,11 +202,11 @@ input:checked ~ .menu-x {
     text-align: center;
 }
 .input1 {
-    margin: 0 0 15px 0;
+    margin: 10px 0 0 0;
 }
 
 .input2 {
-    margin: 120px 0 15px 0;
+    margin: 108px 0 15px 0;
 }
 .btn-go {
     width: 140px;
@@ -217,29 +217,54 @@ input:checked ~ .menu-x {
     margin: 30px 0 0 120px;
 }
 
-.note-box {
-    width: 400px;
-    height: 670px;
-    margin: 170px 0 0 22%;
-    background-color: rgb(231, 255, 246);
-    position: absolute;
-}
-
-.nav-note {
-    width: 100%;
-    height: 70px;
-    background-color: black;
-}
-
-.nav-p {
-    font-size: 37px;
-    color: white;
-    margin: 11px 0 0 30%;
-    text-align: center;
+.mybmi {
+    width: 28%;
+    height: 60%;
+    margin: 13% 0 0 32%;
     position: absolute;
     
 }
 
+.box-bmi {
+    width: 90%;
+      height: 80%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background: rgb(255, 255, 255);
+      border: 5px solid black;
+      margin: 20px 0px 5px 20px ;
+      
+}
+
+.bmi-p1 {
+    font-size:90px;
+    font-weight: 500;
+    color: black;
+    margin: 10% 0 0 31%;
+}
+
+.bmi-p2 {
+    font-size:90px;
+    font-weight: 500;
+    color: black;
+    margin: 3% 0 0 28.4%;
+}
+
+.inbox-bmi {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+
+}
+
+.bmi-p3 {
+    font-size:35px;
+    font-weight: 400;
+    color: black;
+    margin: 3% 0 0 3%;
+
+}
 
 body{
     background-color: #666666;
@@ -248,3 +273,4 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
