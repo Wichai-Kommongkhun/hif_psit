@@ -51,7 +51,7 @@
                 <button type="submit" name="go" class="btn-go" value="submit">GO....</button>
 
             </form>
-            
+
             <div class="box-body">
                 
                 <div class="box-weigth">
@@ -72,8 +72,11 @@
                     <div class="inbox-bmi">
                         <p class="bmi-p3">{{msg}}</p>
                         {%endif%}
+                       
                     </div>
-
+                    <form action="/bmi" method="POST" class="reset-form">
+                        <button type="submit" name="reset" class="btn-reset">reset</button>
+                    </form>
                 </div>
             </div>
             
