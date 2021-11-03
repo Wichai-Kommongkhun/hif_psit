@@ -24,7 +24,10 @@
             <div class="botto">   
                 <div class="botton01"> LOGIN/เข้าสู่ระบบ</div>
             </div>
-                <form class="input-g" action="{{ url_for('login') }}" method="post">
+            {%if incor%}
+            <p class="incor">{{incor}}</p>
+            {%endif%}
+                <form class="input-g" action="{{ url_for('login') }}" method="post" >
 
                     <input type="text" class="input-field" placeholder="username" required
                         maxlength="18" minlength="6" id="username" name="username">

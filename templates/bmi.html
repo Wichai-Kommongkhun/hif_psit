@@ -21,7 +21,7 @@
                     <label for="menu">MENU</label>
                     <div class="menu-x">
                         <ul>
-                                <li><a href="http://127.0.0.1:5000/">Home</a></li>
+                                <li><a href="http://127.0.0.1:5000/home">Home</a></li>
                                 <li><a href="http://127.0.0.1:5000/bmi">MyBMI</a></li>
                                 <li><a href="http://127.0.0.1:5000/hif_main">Your Body</a></li>
                                 <li><a href="http://127.0.0.1:5000/about">About</a></li>
@@ -32,7 +32,7 @@
                 <p class="p-in">START's BMI</p>
                 <div  class="a-in">
                     <div class="a-inx">
-                        <a href="http://127.0.0.1:5000/user_account_login">LOGIN</a>
+                        <a href="http://127.0.0.1:5000/user_account/user_account_login">{{session['user']}}</a>
                     </div>
                 </div>
             </form>
@@ -71,6 +71,9 @@
                     {%if msg%}
                     <div class="inbox-bmi">
                         <p class="bmi-p3">{{msg}}</p>
+                    {%endif%}
+                        {%if name%}
+                        <p class="bmi-p2">{{name}}</p>
                         {%endif%}
                        
                     </div>
@@ -79,10 +82,8 @@
                     </form>
                 </div>
             </div>
-            
-            
+            </div>
         </div>
-    </div>
             
 
     

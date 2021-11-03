@@ -22,24 +22,30 @@ app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'user_account'
 
 
-
 mysql = MySQL(app)
-@app.route("/") 
+
+@app.route("/home",methods=['POST', 'GET'] ) 
 def home():
+    name = "login"
+    if request.method=='POST' and 'username' in request.form:
+        username = (request.form["username"])
+
     return render_template('home.html')
 
-@app.route("/bmi", methods=['POST','GET'])  
+
+
+
+@app.route("/bmi", methods=['POST','GET']) 
 def bmi():
     day = ''
     bmi = ''
     msg = 'ไหนดูสิอ้วนรึป่าว?'
+    name = ''
     if request.method=='POST' and 'weight' in request.form and 'height' in request.form:
         we = float(request.form['weight'])
         he = float(request.form['height'])
         bmi = we/((he/100)**2)
         bmi = '%.2f' %bmi
-
-
         if float(bmi) < 18.50 :
             msg = "☠ผอมเกินไปนะ"
         elif float(bmi) >= 18.50 and float(bmi) < 23.0:
@@ -50,18 +56,11 @@ def bmi():
             msg = "🐻อ้วนเเล้วนะ!"
         elif float(bmi) > 30.0:
             msg = "🐷อ้วนมากเลย ไปลดสะ!"
-
-
-
         today = datetime.today()
         today = today.strftime("%d/%m/%Y %H:%M")
         day = '%s' %today
 
-    return render_template("bmi.html", bmi=bmi, day=day, msg = msg)
-
-
-
-
+    return render_template("bmi.html", bmi=bmi, msg = msg)
 
 
 @app.route("/hif_main")
@@ -86,6 +85,8 @@ def register():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM user WHERE user = % s', (user, ))
         account = cursor.fetchone()
+
+
         if account: #ยังไม่ส่ง msg ไปหน้า reigiter
             msg = ''
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
@@ -98,13 +99,16 @@ def register():
             cursor.execute('INSERT INTO user VALUES (NULL, % s, % s, % s)', (user, email, password, ))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
+        
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
     return render_template('register.html')
 
 
-@app.route("/user_account/user_account_login", methods=['GET','POST'])#               login page *
+@app.route("/user_account/user_account_login", methods=['GET','POST'])#      login page *
 def login():
+    session['user'] = 'Login'
+    incor = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         
         username = request.form['username']
@@ -112,15 +116,17 @@ def login():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM user WHERE user = %s AND password = %s', (username, password))
         account = cursor.fetchone()
+
         if account:
             session['loggedin'] = True
             session['id'] = account['id']
             session['user'] = account['user']
             session['password'] = account['password']
-            return render_template('home.html',)
-        else:
-           return "Incorrect username/password!"
-    return render_template('login.html')
+            return redirect(url_for('home'))
+        else: # ใส่รหัสผิด
+            incor = 'Incorrect username/password!'
+    
+    return render_template('login.html', incor=incor)
         
 
 @app.route('/user_account/user_logout')
