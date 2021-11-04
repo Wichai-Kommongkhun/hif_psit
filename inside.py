@@ -107,8 +107,7 @@ def register():
 
 @app.route("/user_account/user_account_login", methods=['GET','POST'])#      login page *
 def login():
-    session['user'] = 'Login'
-    incor = ''
+    session['user'] = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         
         username = request.form['username']
@@ -124,10 +123,13 @@ def login():
             session['password'] = account['password']
             return redirect(url_for('home'))
         else: # ใส่รหัสผิด
-            incor = 'Incorrect username/password!'
-    
-    return render_template('login.html', incor=incor)
-        
+            return render_template('login-incor.html')
+            
+    return render_template('login.html')
+
+@app.route('/login_incorrect')
+def incorrect():
+    return render_template('login-incor.html')
 
 @app.route('/user_account/user_logout')
 def logout():
@@ -137,6 +139,11 @@ def logout():
    session.pop('user', None)
    # Redirect to login page
    return redirect(url_for('login'))
+
+# FOOD
+@app.route('/food')
+def food():
+    return render_template('/food_list/food.html')
 
 if __name__=="__main__":
     app.run(debug=True)
