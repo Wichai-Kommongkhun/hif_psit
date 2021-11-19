@@ -1,24 +1,32 @@
 * {
     margin: 0;
     padding: 0;
-    ;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 .box0 {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(../img&icon/bg01.jpg);
+    background-color: #666666;
+    background-image: url('https://images.hdqwalls.com/wallpapers/dark-night-mountains-minimalist-4k-o4.jpg');
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .for-box {
     width: 480px;
     height: 540px;
     position: relative;
-    margin: 5% 0 0 36%;
     background: #fff;
     padding: 5px;
+    border-radius: 15px;
 }
 
 .botto {
@@ -30,12 +38,14 @@
 }
 
 .botton01 {
-    background: linear-gradient(to right, #5bff29,#6fc013);
+    background: rgb(32, 32, 32);
     border-radius: 30px;
     transition: .5s; 
     font-size: 30px;
+    color: white;
     padding: 10px 80px ;
     position: absolute;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.27);
 }
 
 
@@ -68,10 +78,11 @@
     cursor: pointer;
     display: block;
     margin: 35px 0 0 35px;
-    background: linear-gradient(to right, #5bff29,#6fc013);
-    border: 1px solid #6fc013;
+    background: rgb(36, 36, 36);
+    color: white;
     outline: none;
     border-radius: 30px;
+    box-shadow: 10px 10px 0px 0px rgba(0, -10, 0, 0.27);
 
 }
 
@@ -89,7 +100,7 @@ span{
 
 .p01 {
     font-size: 20px;
-    margin: 450px 0 0 40px;
+    margin: 475px 0 0 40px;
 }
 
 .incor {
