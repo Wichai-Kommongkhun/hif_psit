@@ -166,7 +166,11 @@ input:checked ~ .menu-x {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 80px 0 0 300px; 
+    padding: 80px 0 0 300px;
+    max-width: 1366px;
+    min-width: 1366px;
+    max-height: 625px;
+    min-height: 625px;
 }
 
 .box-weigth {
@@ -194,6 +198,10 @@ input:checked ~ .menu-x {
     align-items: end;
     justify-content: flex-end;
     padding: 0 150px 20px 0;
+    max-width: 1366px;
+    min-width: 1366px;
+    max-height: 625px;
+    min-height: 625px;
 }
 
 .input-form input {
@@ -230,6 +238,10 @@ input:checked ~ .menu-x {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1366px;
+    min-width: 1366px;
+    max-height: 625px;
+    min-height: 625px;
     
 }
 
@@ -318,6 +330,10 @@ body{
     justify-content: center;
     align-items: end;
     padding-bottom: 80px;
+    max-width: 1366px;
+    min-width: 1366px;
+    max-height: 625px;
+    min-height: 625px;
 }
 
 .rcm {
