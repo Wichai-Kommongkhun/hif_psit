@@ -43,58 +43,26 @@
                  มีปัญหาอะไรพิมพ์ลงกลุ่มเลยนะ   (BIG  FB : Wichai kommongkhun)  เวลาเขียนโค้ดใหม่หรือแก้โค้ดเขียน comment 
                  บอกเพื่อนทุกครั้งนะ ว่าทำอะ แก้ตรงไหน (เขียนชื่อ เเละช่องทางติดต่อส่วนตัวให้ด้วย)   -->
         
-        <div class="form-bg">
-            <form class="input-form" action="/bmi" method="POST" >
+        
+        <div class="box-1">
+            <h1>What is BMI?</h1>
+            <p> Body Mass Index หรือ BMI คือ ค่าความหนาของร่างกาย 
+            <br>ใช้เป็นมาตรฐานในการประเมินภาวะอ้วนหรือผอมในผู้ใหญ่ตั้งแต่อายุ 
+            <br> 20 ปีขึ้นไป ซึ่งคำนวณได้จาก การใช้น้ำหนักตัวเป็นกิโลกรัมและ
+            <br>หารด้วยส่วนสูงที่วัดเป็นเมตรยกกำลังสอง ซึ่งใช้ได้ทั้งผู้หญิงและผู้ชาย</p>
+        </div>
 
-                <input type="text" name="weight" class="input1" placeholder="น้ำหนัก (กิโลกรัม)">
-                <input type="text" name="height" class="input2" placeholder="ส่วนสูง (เซนติเมตร)">
-                <button type="submit" name="go" class="btn-go" value="submit">GO....</button>
+        <div class="box-2">
+            <form class="data-input">
+                <input type="number" maxlength="4" class="input-1">
+                <input type="number" maxlength="4" class="input-2">
+                <button type="submit" class="submit">Submit</button>
 
             </form>
 
-            <div class="box-body">
-                
-                <div class="box-weigth">
-                    <p class="p-box">Weight น้ำหนัก</p>
-                </div>
-                <div class="box-weigth">
-                    <p class="p-box">Height ส่วนสูง</p>
-                </div>
-            </div>
-            
-            <div class="mybmi">
-                <div class="box-bmi">
-                    <p class="bmi-p1">BMI</p>
-                    {% if bmi%}
-                    <p class="bmi-p2">{{bmi}}</p>
-                    {%endif%}
-                    {%if msg%}
-                    <div class="inbox-bmi">
-                        <p class="bmi-p3">{{msg}}</p>
-                    {%endif%}
-                        {%if name%}
-                        <p class="bmi-p2">{{name}}</p>
-                        {%endif%}
-                       
-                    </div>
-                    <form action="/bmi" method="POST" class="reset-form">
-                        <button type="submit" name="reset" class="btn-reset">reset</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- div ลิงค์ไปหน้า food recommend--> 
-            <div class="manu-box">
-                <div href="#" class="rcm">เเนะนำอาหาร</div>
-                <div href="#" class="rcm">ตารางเปรียบเทียบค่า BMI</div>
-            </div>
         </div>
-           
-    </div>
-            
-
     
         
-                        
+    </div>                   
 </body>
 </html>

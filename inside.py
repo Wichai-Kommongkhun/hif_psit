@@ -145,5 +145,8 @@ def logout():
 def food():
     return render_template('/food_list/food.html')
 
+
+
+
 if __name__=="__main__":
     app.run(debug=True)
