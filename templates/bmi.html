@@ -49,19 +49,35 @@
             <p> Body Mass Index หรือ BMI คือ ค่าความหนาของร่างกาย 
             <br>ใช้เป็นมาตรฐานในการประเมินภาวะอ้วนหรือผอมในผู้ใหญ่ตั้งแต่อายุ 
             <br> 20 ปีขึ้นไป ซึ่งคำนวณได้จาก การใช้น้ำหนักตัวเป็นกิโลกรัมและ
-            <br>หารด้วยส่วนสูงที่วัดเป็นเมตรยกกำลังสอง ซึ่งใช้ได้ทั้งผู้หญิงและผู้ชาย</p>
+            <br>หารด้วยส่วนสูงที่วัดเป็นเมตรยกกำลังสอง ซึ่งใช้ได้ทั้งผู้หญิงและผู้ชาย
+            <br>
+            <br>น้อยกว่า 18.5     คือ น้ำหนักต่ำกว่าเกณฑ์
+            <br>18.5 - 22.9     คือ สมส่วน
+            <br>23.0 - 22.9     คือ น้ำหนักเกิน
+            <br>25.0 - 29.9     คือ โรคอ้วน
+            <br> มากว่า 25.0     คือ โรคอ้วนอันตราย
+        </p>
         </div>
 
         <div class="box-2">
-            <form class="data-input">
-                <input type="number" maxlength="4" class="input-1">
-                <input type="number" maxlength="4" class="input-2">
+            <form class="data-input" method="POST" action="/bmi">
+                <input type="number" maxnumber="4" class="input-1" name="weight" placeholder="น้ำหนักตัว(kg)">
+                <input type="number" maxnumber="4" class="input-2" name="height" placeholder="ส่วนสูง(cm)">
                 <button type="submit" class="submit">Submit</button>
 
             </form>
 
         </div>
-    
+        
+        <div class="box-3">
+            <h1>BMI ของคุณ</h1>
+            {%if bmi%}
+            <h2>{{bmi}}</h2>
+            {%endif%}
+            {%if msg%}
+            <p>{{msg}}</p>
+            {%endif%}
+        </div>
         
     </div>                   
 </body>

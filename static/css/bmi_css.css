@@ -163,40 +163,70 @@ body{
 
 /* กล่องข้อความ What is BMI?*/
 .box-1 {
-    width: 500px;
-    height: 250px;
+    width: 600px;
+    height: 450px;
     color: aliceblue;
     font-size: 22px;
-    margin: 10% 0 0 10%;
+    margin: 10% 0 0 5%;
     position: absolute;
-    background-color: bisque;
+    background-color: rgb(104, 57, 0);
 
 }  
 
 /* กล่อง input */
 .box-2 {
-    width: 300px;
+    width: 350px;
     height: 400px;
     margin: 10% 0 0 40%;
     position: absolute;
-    background-color: antiquewhite;
+    
 }
 
 .input-1 {
     width: 100%;
-    height: 10%;
+    height: 30%;
     position: absolute;
+    font-size: 60px;
+    text-align: center;
 
 }
 
 .input-2 {
     width: 100%;
-    height: 10%;
+    height: 30%;
     position: absolute;
-    margin: 20% 0 0 0;
+    margin: 40% 0 0 0;
+    font-size: 60px;
+    text-align: center;
 }
 
 .submit {
-    margin: 50%;
+    margin: 80% 0 0 60%;
     position: absolute;
+    width: 40%;
+    height: 20%;
+}
+
+/* box ouput */
+
+.box-3 {
+    width: 450px;
+    height: 400px;
+    background-color: #666666;
+    position: absolute;
+    margin: 10% 0 0 70%;
+    color: aliceblue;
+}
+
+.box-3 h1 {
+    font-size: 70px;
+    text-align: center;
+}
+.box-3 h2 {
+    font-size: 150px;
+    text-align: center;
+}
+.box-3 p {
+    font-size: 50px;
+    text-align: center;
 }
